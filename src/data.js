@@ -432,5 +432,127 @@ The boring design won.`,
 - Edge caching for global performance
 - Structured data for SEO trust signals`
         }
+    },
+    {
+        id: "polaris",
+        title: "Polaris ERP",
+        subtitle: "Route-to-Revenue Engine",
+        tags: ["ERP System", "Logistics", "B2B SaaS", "Full-Stack"],
+        image: "/assets/polaris.png",
+        flowChart: "/assets/polaris_flow.png",
+        userJourney: "/assets/polaris_journey.png",
+        hook: "Small distribution businesses run on WhatsApp groups and Excel sheets. They lose money daily—miscounted inventory, missed deliveries, forgotten invoices. I built a unified platform that connects every dot from route planning to revenue collection.",
+        points: [
+            { title: "Route Symphony", desc: "Unified delivery scheduling with real-time tracking and driver management." },
+            { title: "Inventory Intelligence", desc: "Automated stock alerts and reorder points prevent stockouts." },
+            { title: "Cash Flow Visibility", desc: "Payment tracking and salary management in one dashboard." }
+        ],
+        action: "The best ERP doesn't feel like ERP. It feels like common sense, finally organized.",
+        longForm: {
+            context: `I watched a family friend run a small distribution business. Every morning was chaos.
+
+He had:
+- A WhatsApp group for driver routes
+- An Excel sheet for inventory
+- A notebook for customer credit
+- A separate app for payments
+- His memory for everything else
+
+One day, he delivered 50 units to a customer who had already maxed out their credit limit. Nobody knew because the "credit data" was in a notebook in the office. That single mistake cost him the entire month's margin.
+
+This problem isn't unique. Every small distributor, retailer, and logistics operator faces the same fragmentation.`,
+
+            struggle: `**The Integration Nightmare**
+
+Building an ERP means touching everything: inventory, orders, routes, customers, payments, salaries, analytics. Each module affects every other module.
+
+Early versions were a mess:
+- Update inventory? Recalculate route capacity.
+- Add a customer? Check credit limits before orders.
+- Complete a delivery? Trigger payment reminders.
+- Pay a driver? Check attendance first.
+
+Every feature created three more edge cases.
+
+**Data Model Decisions**
+
+The hardest part wasn't the UI—it was the data architecture. I spent weeks just designing the relationships:
+- Products → SKUs → Inventory → Warehouses
+- Customers → Orders → Deliveries → Payments
+- Routes → Drivers → Attendance → Salaries
+
+One wrong foreign key relationship and the whole system falls apart.
+
+**Real-Time vs. Batch**
+
+Users expected real-time updates. "Why doesn't inventory update the moment I confirm a delivery?" But real-time updates create race conditions, data conflicts, and server load.
+
+I had to find the right balance between instant feedback and data integrity.`,
+
+            approach: `**Module-First Architecture**
+
+Instead of building one giant app, I designed six independent modules that communicate through a central event bus:
+
+1. **Inventory**: Stock levels, SKUs, valuations, low-stock alerts
+2. **Orders**: Sales pipeline, order status, delivery scheduling
+3. **Routes**: Route planning, driver assignment, completion tracking
+4. **Customers**: CRM, credit limits, payment history
+5. **Finance**: Payments received, pending amounts, salary tracking
+6. **Analytics**: Cross-module dashboards and trend visualization
+
+Each module can function independently but shares the same data layer.
+
+**The Dashboard Philosophy**
+
+Traditional ERPs hide information behind 15 clicks. I put everything on the dashboard:
+- Inventory overview with visual low-stock warnings
+- Payment summary (received vs pending)
+- Salary tracking for the current month
+- Route status across all drivers
+
+A manager can open the app and understand the entire business health in 5 seconds.
+
+**Mobile-First for Field Operations**
+
+Drivers and field staff don't use laptops. Every critical operation needed to work on a phone:
+- Confirm delivery with GPS verification
+- Collect payment and log it instantly
+- Report stock discrepancies
+- Request route changes`,
+
+            outcome: `**Current State**
+
+The platform is live and being tested with real distribution operations:
+- Unified view of inventory, orders, routes, and payments
+- Automated low-stock alerts with reorder suggestions
+- Payment tracking with pending amount visibility
+- Driver salary calculation linked to attendance
+
+**Technical Achievement**
+
+Built end-to-end in 2 weeks using Lovable + Supabase:
+- Real-time data sync across all modules
+- Role-based access (Admin, Manager, Driver)
+- Responsive design for desktop and mobile
+- Export functionality for accounting handoff
+
+**What I Learned**
+
+ERP software fails when it tries to be everything. The key is ruthless prioritization—build the 20% of features that solve 80% of the pain.
+
+For small businesses, that means: Know what you have (inventory), know where it's going (routes), know who owes you money (payments). Everything else is a distraction.`,
+
+            system: `**Frontend**: React + Tailwind (Lovable)
+**Backend**: Supabase (PostgreSQL + Auth + Real-time)
+**Hosting**: Vercel Edge
+
+**Core Modules**:
+- Inventory Management with SKU tracking
+- Route Planning with driver assignment
+- CRM with credit limit enforcement
+- Payment & Salary tracking
+- Analytics dashboards`
+        }
     }
 ];
+
