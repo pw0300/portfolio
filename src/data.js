@@ -21,7 +21,7 @@ export const caseStudies = [
         ],
         action: "Don't wrap a prompt in a UI. Solve the actual workflow friction.",
         longForm: {
-            context: `This project started as a weekend experiment. I was tired of the "what should I cook tonight?" question and thought an AI could solve it.
+            context: `This project started as a weekend experiment. I was tired of the "what should I cook tonight?" question and thought an AI could solve it. I also want to extend my existing Allergy identification to a complete closed loop solution such that any dietary/physical ailment is accounted for in the food you eat and you still get to enjoy your favourite dishes.
 
 The first version was simple: a chat interface where you describe what you have, and the AI suggests recipes. It worked. The AI was smart. The responses were helpful.
 
@@ -49,7 +49,7 @@ By step 3, I was already annoyed. By step 6, I just ordered takeout.
 
 **Week 3: User Research**
 
-I talked to 15 people who had tried the app. The feedback was brutal but consistent:
+I talked to 10 people who had tried the app. The feedback was brutal but consistent:
 
 - "I don't want to type when I'm hungry"
 - "The AI kept suggesting things I didn't have"
@@ -96,7 +96,6 @@ For allergens and dietary restrictions, I moved safety out of the AI prompt and 
             outcome: `**The Results**
 
 After the pivot:
-- 7-day retention jumped from 8% to 34%
 - Average session time increased from 45 seconds to 4+ minutes
 - API costs dropped 60%
 - User satisfaction scores improved dramatically
@@ -156,7 +155,7 @@ This is terrible design. It optimizes for correctness at the expense of confiden
 
 **Talking to Language Teachers**
 
-I interviewed 8 professional language tutors, asking how they handle student mistakes. Every single one said some version of:
+I interviewed 3 professional language tutors, asking how they handle student mistakes. Every single one said some version of:
 
 "I don't interrupt. I let them finish, then gently suggest an alternative. If they're communicating, small grammar errors don't matter."
 
@@ -238,22 +237,22 @@ I built a language learning app, but really, I built a confidence engine.`,
         ],
         action: "Sometimes you need to fire your users. Optimize for value, not volume.",
         longForm: {
-            context: `I do occasional consulting work. The problem with consulting is that everyone wants to "pick your brain" for free.
+            context: `My friend does occasional consulting work. The problem with consulting is that everyone wants to "pick your brain" for free.
 
-My website had a simple contact form. Name, email, message. Professional. Standard.
+The website had a simple contact form. Name, email, message. Professional. Standard.
 
 And completely useless.
 
-Every day I received 20+ inquiries. About 18 of them were:
+Every day he received 20+ inquiries. About 18 of them were:
 - Vague "let's collaborate" messages
 - People asking for free advice disguised as project inquiries
 - Complete spam
 
-I was spending 2 hours daily just triaging my inbox, only to find 1-2 legitimate opportunities.`,
+He was spending 2 hours daily just triaging my inbox, only to find 1-2 legitimate opportunities.`,
 
             struggle: `**Failed Solutions**
 
-I tried everything:
+We tried everything:
 - Adding a CAPTCHA (stopped bots, not tire-kickers)
 - Making the form longer (slightly fewer submissions, same quality ratio)
 - Requiring a budget field (everyone wrote "TBD" or "Let's discuss")
@@ -308,16 +307,13 @@ I don't touch anything until someone is pre-qualified.`,
             outcome: `**The Results**
 
 After launching the new design:
-- Total inquiries dropped 80% (intentional)
 - High-quality lead ratio went from 10% to 85%
 - Time spent on inbox triage dropped from 2 hours/day to 15 minutes/week
 - Average project value increased 3x (premium positioning attracted bigger clients)
 
 **The Hater Button Worked**
 
-This was a joke that became a feature. About 15% of visitors click the "I'm a hater" option. They get redirected to a witty Twitter thread where I respond to criticism.
-
-Result: Trolls who would've written angry emails now generate engagement on social media instead. Negative energy becomes marketing.
+This was a joke that became a feature. About 15% of visitors click the "I'm a hater" option. 
 
 **Cost: $0**
 
@@ -347,7 +343,7 @@ The entire backend runs on free Google tools. No hosting costs. No database fees
         ],
         action: "In low-trust markets, reliability is the ultimate differentiator.",
         longForm: {
-            context: `I was helping a client build a platform connecting users to verified financial advisors.
+            context: `I was entertaining an idea for a platform connecting users to verified financial advisors.
 
 The market for "trading advice" is a cesspool of scams. Every day, someone loses money to a fake guru promising 1000% returns. Users are (rightfully) paranoid.
 
@@ -357,7 +353,6 @@ Our biggest challenge wasn't building the product—it was convincing anyone we 
 
 We launched with a well-designed, modern website. Sleek animations. Gradient backgrounds. Beautiful imagery.
 
-Bounce rate: 85%.
 
 Users told us:
 - "This looks too good. Must be a scam."
@@ -412,19 +407,12 @@ We obsessed over Core Web Vitals:
 
 We also learned that "one site for everything" doesn't work in this space.
 
-Instead of a general "Thai Services" site, we launched micro-sites:
-- MuayThaiTraining.com for fight training
-- BangkokCondos.com for real estate
-- ThaiSpas.com for wellness
-
 Each site has hyper-specific copy, imagery, and SEO. A user searching for "Muay Thai training Bangkok" sees a site that speaks exactly to that need—not a generic portal asking them to navigate to the right section.`,
 
             outcome: `**The Results**
 
 After the redesign:
-- Bounce rate dropped from 85% to 35%
 - Trust survey scores increased 60%
-- Advisor signups grew 4x (they trusted us enough to list their credentials)
 - The micro-site strategy improved SEO rankings dramatically
 
 **Key Insight**
