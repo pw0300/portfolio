@@ -553,6 +553,220 @@ For small businesses, that means: Know what you have (inventory), know where it'
 - Payment & Salary tracking
 - Analytics dashboards`
         }
+    },
+    {
+        id: "times-internet",
+        title: "Times Internet",
+        subtitle: "Scaling India's Largest Digital News Platform",
+        tags: ["AdTech", "Media", "High-Traffic Systems", "AI/LLM"],
+        image: "/assets/times.png",
+        flowChart: "/assets/times_flow.png",
+        userJourney: "/assets/times_journey.png",
+        hook: "TOI.in serves 100M+ users monthly. Every millisecond of ad latency costs revenue. Every editorial decision affects millions. I worked on both—optimizing ad infrastructure and reinventing how cricket content drives engagement.",
+        points: [
+            { title: "Ad Innovation", desc: "Launched 4 new ad templates + built in-house ad builder for faster format development." },
+            { title: "Cricket Revamp", desc: "Created 5 widgets with 5.7% engagement; ran LLM-powered liveblogs during matches." },
+            { title: "High-Traffic Ops", desc: "Supported Elections, World Cup campaigns handling massive concurrent load." }
+        ],
+        action: "At scale, small optimizations compound into massive impact. A 10ms improvement saves hours of user time daily.",
+        longForm: {
+            context: `Times Internet runs some of India's biggest digital properties—Times of India, Economic Times, Cricbuzz, and more. TOI.in alone handles traffic that would crush most infrastructure.
+
+I joined the team to work on two critical areas:
+1. **Ad Technology**: Making ads load faster and yield higher revenue
+2. **Sports Content**: Reimagining how millions consume cricket and tennis content
+
+Both required thinking at scale—where a 1% improvement means millions of rupees and millions of users.`,
+
+            struggle: `**The Ad Latency Problem**
+
+Digital advertising is a speed game. Every 100ms of delay in ad loading:
+- Reduces viewability scores
+- Lowers eCPMs (revenue per impression)
+- Frustrates users who see content shift as ads load
+
+Our ads were loading too slowly. The network waterfall was chaotic—multiple calls competing for bandwidth, blocking critical content.
+
+**The Content Discovery Problem**
+
+Cricket pages had good traffic but poor engagement. Users would check the score and leave. We weren't giving them reasons to stay.
+
+The editorial team was also struggling:
+- Publishing schedules weren't optimized for traffic patterns
+- Competitors were beating us to breaking stories
+- Score tracking required users to refresh constantly
+
+**High-Stakes Events**
+
+Elections and World Cup weren't just busy periods—they were stress tests. A single ad campaign misfire during IPL finals could mean lakhs in lost revenue. The stakes were real and the margin for error was zero.`,
+
+            approach: `**Ad Infrastructure Optimization**
+
+I tackled the ad loading problem from multiple angles:
+
+1. **Network Call Reordering**: Analyzed the waterfall and reprioritized calls. Critical ad slots loaded first; supplementary slots loaded asynchronously. Result: faster perceived load time.
+
+2. **Pre-bid Optimization**: Deep-dived into prebid auction data to understand which ad networks performed best in which contexts. Adjusted timeout configurations and floor prices based on user segments.
+
+3. **Custom Ad Builder Tool**: Our team was spending days creating new ad formats. I built an in-house tool that let designers create and test ad templates without engineering support. Reduced turnaround from weeks to hours.
+
+4. **4 New Ad Templates**: Launched new high-impact formats that increased revenue per page view without hurting user experience.
+
+**Cricket Section Reinvention**
+
+I led a complete revamp of the cricket experience:
+
+1. **5 New Widgets**: Ball-by-ball tracker, momentum graph, player stats overlay, match situation summary, and predicted score. Combined engagement across all widgets: 5.7% of total users interacted.
+
+2. **LLM-Powered Liveblogs**: Ran a PoC where we used LLMs to auto-generate engaging liveblog commentary during matches. The AI captured the drama of each ball while editors added context and analysis.
+
+3. **Editorial Schedule Optimization**: Ran competitor analysis to identify optimal publishing windows. Adjusted liveblog posting schedule to capture traffic peaks. Result: more users arriving via search during critical match moments.
+
+**Tennis Section (Wimbledon)**
+
+Applied similar thinking to tennis during Wimbledon:
+- Revamped the section layout
+- Added a score tracking widget for easier updates
+- Optimized for mobile viewing (most tennis consumption happened on phones)
+
+**Homepage Reordering**
+
+Analyzed engagement data for TOI.in homepage. Reordered content modules based on:
+- Click-through rates by position
+- Time-of-day consumption patterns
+- Device-specific behavior
+
+Small changes in layout yielded measurable CTR improvements.`,
+
+            outcome: `**Measurable Impact**
+
+Ad Performance:
+- Faster ad load times through network call optimization
+- Higher eCPMs from pre-bid tuning
+- Faster ad format development with custom builder tool
+
+Cricket Engagement:
+- 5 new widgets with 5.7% combined engagement rate
+- Successful LLM liveblog PoC during live matches
+- Improved traffic capture through editorial schedule optimization
+
+High-Traffic Events:
+- Zero critical failures during Elections and World Cup
+- Successfully delivered client campaign requirements under extreme load
+
+**What I Learned**
+
+Working at scale teaches you to respect small numbers. A 0.5% improvement in click-through rate sounds trivial—until you multiply it by 100 million users.
+
+It also taught me the power of tooling. Building the ad template tool didn't just save my time—it saved time for designers, engineers, and campaign managers. Force multipliers are worth the investment.`,
+
+            system: `**Platform**: Times Internet proprietary CMS
+**Ad Stack**: Google Ad Manager + Prebid.js + Custom wrappers
+**Content**: React-based widgets embedded in legacy pages
+**AI/LLM**: OpenAI API for liveblog PoC
+**Traffic Scale**: 100M+ monthly users
+
+**Key Technical Work**:
+- Network call reordering for ad latency
+- Pre-bid timeout and floor price optimization
+- Custom ad template builder (internal tool)
+- Real-time cricket widgets
+- LLM integration for auto-commentary`
+        }
+    }
+];
+
+export const experiences = [
+    {
+        id: "ziki",
+        company: "Ziki | First Livingspaces",
+        role: "Product Manager",
+        duration: "March 2024 - Present",
+        location: "Mumbai, India",
+        logo: "/assets/ziki-logo.png",
+        description: "Owning the Hyperlocal Services Marketplace roadmap. Led strategic pivot from low-margin utilities to high-margin Experiential Services, driving GMV growth.",
+        highlights: [
+            {
+                category: "Marketplace Strategy",
+                points: [
+                    "Launched 'Ziki Services' vertical (0→1); drove +13% MoM GMV from high-ticket experiential categories",
+                    "Led strategic pivot from low-margin utilities to high-margin Experiential Services (Travel, Finance, Fitness, Skilling)",
+                    "Built scalable cohort-targeted coupon engine with category-specific rules; improved cart-to-booking +12%"
+                ]
+            },
+            {
+                category: "Operations & Scale",
+                points: [
+                    "Automated vendor verification + onboarding; cut activation time 70%; scaled to 100+ verified pros",
+                    "Shipped service partner/customer fulfilment tracking (status + SLAs); improved CSAT +20%",
+                    "Establish OKR-driven governance and Agile rituals; ensured 75% on-time delivery of complex milestones"
+                ]
+            },
+            {
+                category: "Technical Implementation",
+                points: [
+                    "Deployed AI voice agent for service complaints as pre-qual + routing; reduced first-call TAT from 1 hr to <1 min",
+                    "Automated reconciliation via SAP ERP integration; reduced finance overhead by 2 FTEs"
+                ]
+            }
+        ],
+        tags: ["Marketplace", "0→1", "GTM Strategy", "AI Agents", "SAP Integration"]
+    },
+    {
+        id: "times-internet",
+        company: "Times Internet (Times of India)",
+        role: "Product Manager – AdTech & New Initiatives",
+        duration: "May 2022 - March 2024",
+        location: "Noida, India",
+        logo: "/assets/times-logo.png",
+        description: "Managed the AdTech product vertical driving $500K+ ARR. Led cross-functional collaboration between Engineering and Sales to align technical capabilities with monetization targets.",
+        highlights: [
+            {
+                category: "AdTech Monetization",
+                points: [
+                    "Revenue Engine ($500K+): Designed and launched 'Ad Orchestrator,' a real-time inventory allocation system delivering $500K+ annualized revenue.",
+                    "Ad Format Innovation: Built internal no-code ad builder tool, reducing format development cycle from 2 weeks to 2 days.",
+                    "Pre-bid Revenue Tuning: Optimized auction timeouts and floor prices based on demand signals, improving eCPMs."
+                ]
+            },
+            {
+                category: "Platform Performance",
+                points: [
+                    "Ad Latency Optimization: Reordered network waterfall to prioritize above-the-fold slots, improving viewability scores.",
+                    "CMS Modernization: Led migration to cloud-native architecture, accelerating deployment velocity by 75% and boosting Core Web Vitals."
+                ]
+            },
+            {
+                category: "Engagement & Content (Cricket & Sports)",
+                points: [
+                    "Cricket Section Revamp: Created 5 new engagement widgets (live score, commentary visualization) achieving 5.7% engagement across all users.",
+                    "Liveblog System with LLMs: Piloted AI-generated liveblogs for matches, driving max traffic via competitor analysis-based scheduling.",
+                    "Wimbledon & Tennis: Revamped section and added real-time score tracking widgets; supported high-traffic events (Elections, World Cup).",
+                    "Homepage Optimization: Reordered TOI.in homepage based on user behavior analysis to optimize CTR and time-on-site."
+                ]
+            }
+        ],
+        tags: ["AdTech", "Revenue ($500K+)", "CMS", "High-Traffic Systems", "AI/LLM", "A/B Testing"]
+    },
+    {
+        id: "polaris",
+        company: "Polaris Manufacturers Pvt. Ltd.",
+        role: "Founding Chief of Operations",
+        duration: "June 2019 - June 2020",
+        location: "Nagpur, India",
+        logo: "/assets/polaris-logo.png",
+        description: "Led digital transformation of manufacturing operations for a $2M scale-up. Redefined procurement logic and logistics across the supply chain.",
+        highlights: [
+            {
+                category: "Operational Excellence",
+                points: [
+                    "Led digital transformation of manufacturing operations for $2M scale-up",
+                    "Redefined procurement logic and logistics across end-to-end supply chain",
+                    "Deployed real-time bottleneck identification processes; reduced production idle time by 73%"
+                ]
+            }
+        ],
+        tags: ["Operations", "Digital Transformation", "Supply Chain", "Manufacturing"]
     }
 ];
 
