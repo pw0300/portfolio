@@ -53,7 +53,7 @@ const ProductPhilosophy = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="glass-panel p-8 flex flex-col gap-4 hover:border-accent/30 transition-colors"
+                                className="glass-panel archetype-card hover:border-accent/30 transition-colors"
                             >
                                 <div className="flex items-start justify-between">
                                     <div className="p-3 rounded-lg bg-accent/10 border border-accent/20">

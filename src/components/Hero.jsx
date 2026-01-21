@@ -14,10 +14,10 @@ const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="mb-8 flex flex-col items-center"
                 >
-                    <span className="block text-5xl md:text-7xl font-bold leading-tight tracking-tight mb-4">
+                    <span className="block text-6xl md:text-8xl font-bold leading-none tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
                         Pratik Wankhede
                     </span>
-                    <span className="block text-accent text-2xl md:text-4xl font-light tracking-wide uppercase opacity-90 mt-2">
+                    <span className="block text-xl md:text-2xl font-mono text-accent tracking-widest uppercase opacity-90">
                         Product Manager & System Thinker
                     </span>
                 </motion.h1>
@@ -26,7 +26,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    style={{ fontSize: '1.25rem', lineHeight: '1.6' }}
+                    className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed font-light"
                 >
                     {philosophy.sub}
                 </motion.p>
@@ -35,17 +35,17 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
+                    className="flex flex-col sm:flex-row gap-6 justify-center mt-8"
                 >
                     <a
                         href="#experience"
-                        className="btn-primary px-8 py-3 text-lg font-medium tracking-wide"
+                        className="btn-primary"
                     >
                         View Experience
                     </a>
                     <a
                         href="#work"
-                        className="px-8 py-3 text-lg font-medium tracking-wide border border-white/20 rounded-lg hover:border-accent hover:bg-white/5 transition-all text-text-secondary hover:text-white"
+                        className="btn-outline"
                     >
                         Case Studies
                     </a>
@@ -56,20 +56,17 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
-                    className="mt-12 flex flex-wrap justify-center items-center gap-6 text-sm text-text-secondary opacity-80"
+                    className="mt-16 flex flex-wrap justify-center items-center gap-4 text-sm font-mono text-text-secondary"
                 >
-                    <span className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-accent"></span>
-                        MBA, IIM Calcutta
-                    </span>
-                    <span className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-accent"></span>
-                        Ex-Times Internet
-                    </span>
-                    <span className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-accent"></span>
-                        B.Tech, IIST (Space Tech)
-                    </span>
+                    {[
+                        "MBA, IIM Calcutta",
+                        "Ex-Times Internet",
+                        "B.Tech, IIST (Space Tech)"
+                    ].map((badge, i) => (
+                        <span key={i} className="trust-badge">
+                            {badge}
+                        </span>
+                    ))}
                 </motion.div>
             </div>
 
