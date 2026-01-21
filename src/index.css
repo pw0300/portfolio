@@ -7,20 +7,22 @@
   --text-secondary: #a1a1aa;
   --text-muted: #52525b;
 
-  /* Electric Blue/Purple Theme */
-  --accent: #3b82f6;
-  --accent-secondary: #8b5cf6;
-  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  /* Dark Sketch Theme */
+  --accent: #FFFFFF;
+  /* White Chalk */
+  --accent-secondary: #a1a1aa;
+  --accent-gradient: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
 
-  --accent-dim: rgba(59, 130, 246, 0.1);
-  --accent-glow: rgba(59, 130, 246, 0.3);
+  --accent-dim: rgba(255, 255, 255, 0.1);
+  --accent-glow: rgba(255, 255, 255, 0.15);
 
-  --border: #27272a;
-  --border-light: #3f3f46;
+  --border: #3f3f46;
+  --border-light: #52525b;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --font-hand: 'Architects Daughter', cursive;
 
   --spacing-sm: 8px;
   --spacing-md: 16px;
@@ -31,6 +33,10 @@
   --radius-lg: 12px;
   --radius-xl: 24px;
   --radius-full: 9999px;
+
+  /* Sketch-specific radii */
+  --radius-sketch-1: 255px 15px 225px 15px/15px 225px 15px 255px;
+  --radius-sketch-2: 23px 2px 28px 4px;
 
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -79,9 +85,7 @@ h1 {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.1;
-  background: linear-gradient(to bottom right, #fff 30%, #9ca3af);
-  -webkit-background-clip: text;
-  color: transparent;
+  color: white;
 }
 
 h2 {
@@ -108,6 +112,10 @@ p {
 
 .text-mono {
   font-family: var(--font-mono);
+}
+
+.text-hand {
+  font-family: var(--font-hand);
 }
 
 .text-label {
@@ -177,8 +185,7 @@ p {
   left: 0;
 }
 
-/* Custom Buttons */
-/* Custom Buttons */
+/* Sketch Buttons */
 .btn-clean {
   background: transparent;
   border: none;
@@ -186,7 +193,7 @@ p {
   cursor: pointer;
   color: var(--text-secondary);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-family: var(--font-hand);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 8px 0;
@@ -195,48 +202,52 @@ p {
 
 .btn-clean:hover {
   color: white;
-  letter-spacing: 0.15em;
+  transform: rotate(-2deg);
 }
 
 .btn-primary {
   position: relative;
-  background: var(--accent);
-  border: 1px solid var(--accent);
+  background: transparent;
+  border: 2px solid white;
   color: white;
-  /* High contrast text */
   padding: 12px 32px;
   font-size: 1rem;
-  font-weight: 600;
-  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-family: var(--font-display);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-  box-shadow: 0 0 20px var(--accent-dim);
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sketch-2);
+  box-shadow: 4px 4px 0px white;
+}
+
+.btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px white;
 }
 
 .btn-primary:hover {
-  background: var(--accent-secondary);
-  border-color: var(--accent-secondary);
-  box-shadow: 0 0 30px var(--accent-glow);
-  transform: translateY(-2px);
+  transform: translate(-1px, -1px) rotate(-1deg);
+  box-shadow: 6px 6px 0px white;
 }
 
 .btn-outline {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--text-primary);
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  color: var(--text-secondary);
   padding: 12px 32px;
   font-size: 1rem;
-  font-weight: 500;
-  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-family: var(--font-display);
+  border-radius: var(--radius-sketch-1);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-  border-color: var(--accent);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: white;
   color: white;
+  border-style: solid;
+  transform: rotate(1deg);
 }
 
 
@@ -340,45 +351,46 @@ p {
 
 /* Components */
 .glass-panel {
-  background: rgba(20, 20, 20, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 2px solid white;
+  border-radius: var(--radius-sketch-1);
   padding: var(--spacing-lg);
   transition: all var(--transition-smooth);
+  box-shadow: 8px 8px 0 rgba(255, 255, 255, 0.1);
 }
 
 .glass-panel:hover {
-  background: rgba(30, 30, 30, 0.8);
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  transform: translate(-2px, -2px) rotate(0.5deg);
+  box-shadow: 12px 12px 0 rgba(255, 255, 255, 0.2);
+  border-color: white;
 }
 
 .tag {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 0.85rem;
   padding: 4px 12px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(100, 255, 218, 0.2);
-  background: rgba(100, 255, 218, 0.05);
-  color: var(--accent);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
 }
 
 .number-badge {
   width: 32px;
   height: 32px;
-  background: #27272a;
-  border: 1px solid #3f3f46;
+  background: white;
+  border: 2px solid white;
   border-radius: 50%;
+  /* Perfect circle for sketch contrast */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent);
+  color: black;
   font-weight: bold;
   font-size: 0.875rem;
   flex-shrink: 0;
+  font-family: var(--font-hand);
 }
 
 .hero-bg {
@@ -418,27 +430,55 @@ p {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
 }
 
+/* Animations */
+@keyframes sketch-wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(1deg);
+  }
+
+  50% {
+    transform: rotate(-1deg);
+  }
+
+  75% {
+    transform: rotate(0.5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 /* Component-Specific Utilities */
 
 .trust-badge {
-  padding: 8px 20px;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.03);
+  padding: 8px 24px;
+  border-radius: var(--radius-sketch-2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
   color: var(--text-secondary);
-  font-size: 0.875rem;
-  font-family: var(--font-mono);
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-family: var(--font-hand);
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  position: relative;
+  overflow: hidden;
 }
 
 .trust-badge:hover {
-  border-color: rgba(59, 130, 246, 0.3);
-  background: rgba(59, 130, 246, 0.05);
-  color: var(--text-primary);
-  transform: translateY(-1px);
+  border-color: white;
+  color: var(--bg-dark);
+  background: white;
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.2);
+  animation: sketch-wiggle 0.4s ease-in-out;
 }
 
 .archetype-card {
